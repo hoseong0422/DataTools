@@ -1,0 +1,6 @@
+- pipeline.id: [ TEST_PIPELINE_ID_A ]
+  queue.type: persisted
+  path.config: [ TEST_CONF_PATH_A ]
+- pipeline.id: [ TEST_PIPELINE_ID_B ]
+  queue.type: persisted
+  path.config: [ TEST_CONF_PATH_B ]
