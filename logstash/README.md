@@ -4,4 +4,4 @@
     - Copy 후 Truncate가 수행되는 사이에 적재된 로그 유실발생 확인
     - File Input의 stat_interval 조절하여 유실 최소화
     - 가장 좋은 방법은 postrotate script 이용하여 lotate 수행 후 Application Logger가 새로 생성된 로그파일을 바라보도록 재시작 시그널 날려주는 방법으로 보임
-- [Logstash 설정 파일](https://github.com/hoseong0422/elk/logstash/file_to_kafka.conf)
+- [Logstash 설정 파일](https://github.com/hoseong0422/elk/blob/master/logstash/file_to_kafka.conf)
