@@ -1,0 +1,10 @@
+/var/log/test/test.log {
+  daily # rotatation 주기
+  rotate 5 # 백업 파일 개수
+  missingok # 로그파일이 없어도 에러처리 X
+  notifempty # 로그파일이 비어있으면 rotation X
+  create 644 root root # 새로 생성할 로그 파일 권한
+  postrotate # rotataion 이후 동작할 스크립트
+    signal to restart logger # 로그 파일을 reopen 하는 signal 전송
+  endscript
+}
