@@ -1,0 +1,20 @@
+version: '3'
+services:
+  jenkins:
+    platform: linux/arm64
+    image: jenkins/jenkins:lts
+    user: root
+    restart: unless-stopped
+    hostname: jenkins
+    container_name: jenkins
+    environment:
+      - TZ=Asia/Seoul
+    volumes:
+      - ./jenkinsdata/data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/local/bin/docker:/usr/bin/docker
+      
+    ports:
+      - 8083:8080
+      - 50000:50000
+
