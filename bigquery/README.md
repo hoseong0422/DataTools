@@ -5,7 +5,7 @@
     -  [BigQuery Data Types](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types)
 - 예) [MySQL의 float 타입을 BigQuery에 적재하려면](./MySQL_to_Bigquery.md)
 ### Streaming Insert 중복 제거
-- insert 요청시 request body에 insertId 추가하여 요청
+- [insert 요청시 request body에 insertId 추가하여 요청](https://cloud.google.com/bigquery/docs/streaming-data-into-bigquery?hl=ko)
     ```JSON
     {
     "kind": string,
@@ -24,3 +24,19 @@
     }
     ```
     - insertId 속성을 사용하여 최대 1분 동안 최선형 중복 삭제를 지원
+    - 중복 row 확인
+    ```SQL
+    SELECT
+        * EXCEPT row_number
+    FROM
+        (
+            SELECT
+                *,
+                ROW_NUMBER OVER(PARTITION BY key_column) AS row_number
+            FROM
+                target_table
+        )
+    WHERE
+        row_number > 1
+    ```
+    
