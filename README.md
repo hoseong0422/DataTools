@@ -8,4 +8,4 @@
 ### [Jenkins](./jenkins/README.md)
 ### [Logstash](./logstash/README.md)
 ### [Vector](./vector/README.md)
-### [KEDA](./keda/README.md)
+### [KEDA](./KEDA/README.md)
