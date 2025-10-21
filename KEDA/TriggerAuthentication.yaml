@@ -1,0 +1,11 @@
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: keda-auth-read
+  namespace: vector
+spec:
+  secretTargetRef:
+  - parameter: GoogleApplicationCredentials
+    name: pub-sub-read-credentials
+    key: key.json     
+
